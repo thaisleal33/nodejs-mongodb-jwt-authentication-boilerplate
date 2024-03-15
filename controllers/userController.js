@@ -91,7 +91,7 @@ async function changePassword(req, res) {
     const { userId, currentPassword, newPassword } = req.body;
 
     try {
-        const user = await User.findById(userId;
+        const user = await User.findById(userId);
         if (!user) {
             return res.status(404).json({ message: 'Usuário não encontrado.'});
         }
