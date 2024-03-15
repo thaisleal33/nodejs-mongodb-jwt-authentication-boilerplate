@@ -8,7 +8,7 @@
     "start": "nodemon app.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "Thaís Leal",
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^5.1.1",
