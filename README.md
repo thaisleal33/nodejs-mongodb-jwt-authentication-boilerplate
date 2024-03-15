@@ -7,6 +7,7 @@ Boilerplate application for handling register, login, user deletion and update, 
 This project has its status returns written in Portuguese. Adjust the returns accordingly to your language of choice.
 
 ## Made with:
+- Node.js
 - ❤ & ☕
 
 
