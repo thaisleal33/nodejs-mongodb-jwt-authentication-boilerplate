@@ -3,6 +3,10 @@
 
 Boilerplate application for handling register, login, user deletion and update, password change and token authorization.
 
+
+Made with:
+- ❤ & ☕
+
 Dependencies:
 - bcrypt
 - dotenv
@@ -15,7 +19,7 @@ Dev dependencies:
 
 
 
-## Instalação
+## Install
 
 ```bash
   npm i
