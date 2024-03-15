@@ -1,7 +1,7 @@
 
 # Node.js + mongodb + jwt authentication
 
-Boilerplate application for handling register, login, password change and token authorization
+Boilerplate application for handling register, login, user deletion and update, password change and token authorization.
 
 Dependencies:
 - bcrypt
