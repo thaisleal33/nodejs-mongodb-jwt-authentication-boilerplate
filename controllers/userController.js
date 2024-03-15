@@ -8,7 +8,7 @@ async function registerUser(req, res) {
 
     // Validations
     if (!username || !name || !email || !password || password !== confirmPassword) {
-        return res.status(422).json({ message: "Verifique os campos fornecidos." });
+        return res.status(422).json({ message: "Verifique os dados fornecidos. Certifique-se de preencher todos os campos obrigatórios." });
     }
 
     try {
@@ -45,7 +45,7 @@ async function loginUser(req, res) {
 
     // Validations
     if (!email || !password) {
-        return res.status(422).json({ message: "Verifique os campos fornecidos." });
+        return res.status(422).json({ message: "Verifique os dados fornecidos." });
     }
 
     try {
@@ -88,30 +88,30 @@ async function getUser(req, res) {
 }
 
 async function changePassword(req, res) {
-    const { userId, currentPassword, newPassword } = req.body
+    const { userId, currentPassword, newPassword } = req.body;
 
     try {
-        const user = await User.findById(userId)
+        const user = await User.findById(userId;
         if (!user) {
-            return res.status(404).json({ message: 'Usuário não encontrado.'})
+            return res.status(404).json({ message: 'Usuário não encontrado.'});
         }
 
-        const isPasswordValid = await bcrypt.compare(currentPassword, user.password)
+        const isPasswordValid = await bcrypt.compare(currentPassword, user.password);
         if (!isPasswordValid) {
             return res.status(400).json({ message: 'Senha atual incorreta.'})
         }
 
         const salt = await bcrypt.genSalt(12)
-        const newPasswordHash = await bcrypt.hash(newPassword, salt)
+        const newPasswordHash = await bcrypt.hash(newPassword, salt);
 
         user.password = newPasswordHash;
         await user.save();
 
-        res.status(200).json({ message: 'Senha alterada com sucesso!' })
+        res.status(200).json({ message: 'Senha alterada com sucesso!' });
         
     } catch (error) {
         console.error(error);
-        res.status(500).json({ message: 'Erro ao alterar a senha.'})
+        res.status(500).json({ message: 'Erro ao alterar a senha.'});
     }
 }
 
