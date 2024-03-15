@@ -35,7 +35,7 @@ async function registerUser(req, res) {
         res.status(201).json({ message: 'Usuário registrado com sucesso!' });
     } catch (error) {
         console.log(error);
-        res.status(500).json({ message: "Erro no servidor, tente novamente mais tarde." });
+        res.status(500).json({ message: "Erro no servidor, tente novamente em alguns instantes." });
     }
 }
 
@@ -65,7 +65,7 @@ async function loginUser(req, res) {
         res.status(200).json({ message: "Login realizado com sucesso!", token });
     } catch (error) {
         console.log(error);
-        res.status(500).json({ message: "Erro no servidor, tente novamente mais tarde." });
+        res.status(500).json({ message: "Erro no servidor, tente novamente em alguns instantes." });
     }
 }
 
@@ -82,7 +82,7 @@ async function getUser(req, res) {
         res.status(200).json({ user });
     } catch (error) {
         console.log(error);
-        res.status(500).json({ message: "Erro no servidor, tente novamente mais tarde." });
+        res.status(500).json({ message: "Erro no servidor, tente novamente em alguns instantes." });
     }
 }
 
