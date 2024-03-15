@@ -5,7 +5,12 @@ const checkToken = require('../middlewares/checkToken');
 
 router.post('/register', userController.registerUser);
 router.post('/login', userController.loginUser);
-router.post('/change-password', userController.changePassword);
+
 router.get('/user/:id', checkToken, userController.getUser);
+
+router.put('/change-password', checkToken, userController.changePassword);
+router.put('/user/:id', checkToken, userController.updateUser );
+
+router.delete('/user/:id', checkToken, userController.deleteUser);
 
 module.exports = router;
