@@ -114,4 +114,45 @@ async function changePassword(req, res) {
     }
 }
 
-module.exports = { registerUser, loginUser, getUser, changePassword };
+async function deleteUser(req, res) {
+    const userId = req.params.id;
+
+    try {
+        const user = await User.findById(userId);
+        if(!user) {
+            return res.status(404).json({ message: 'Usuário não encontrado.'});
+        }
+
+        //Delete user
+        await User.findByIdAndDelete(userId);
+        res.status(200).json({ message: 'Usuário deletado com sucesso!'});
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ message: 'Erro ao deletar o usuário.'});
+    }
+}
+
+async function updateUser(req, res) {
+    const userId = req.params.id;
+    const { username, name, email } = req.body;
+    
+    try {
+        const user = await User.findById(userId);
+        if (!user) {
+            return res.status(404).json({ message: 'Usuário não encontrado. '});
+        }
+
+        //Update info
+        if (username) user.username = username;
+        if (name) user.name = name;
+        if(email) user.email = email;
+
+        await user.save();
+        res.status(200).json({ message: 'Dados atualizados com sucesso!' });
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ message: 'Erro ao atualizar as informações do usuário. Tente novamente em alguns instantes. '});
+    }
+}
+
+module.exports = { registerUser, loginUser, getUser, changePassword, deleteUser, updateUser };
