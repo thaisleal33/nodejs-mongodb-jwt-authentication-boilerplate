@@ -1,5 +1,5 @@
 {
-  "name": "backend",
+  "name": "nodejs-mongodb-jwt-authentication-boilerplate",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
