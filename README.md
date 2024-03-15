@@ -3,20 +3,23 @@
 
 Boilerplate application for handling register, login, user deletion and update, password change and token authorization.
 
+## Notice
+This project has its status returns written in Portuguese. Adjust the returns accordingly to your language of choice.
 
-Made with:
+## Made with:
 - ❤ & ☕
 
-Dependencies:
+
+## Dependencies:
 - bcrypt
 - dotenv
 - express
 - jsonwebtoken
 - mongoose
 
-Dev dependencies:
-- nodemon
 
+## Dev dependencies:
+- nodemon
 
 
 ## Install
